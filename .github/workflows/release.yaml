@@ -33,7 +33,7 @@ jobs:
       - run: ko publish -B ./cmd/allstar --tags ${{ github.ref_name }}-gha --image-refs allstar-gha.ref
         env:
           KO_DOCKER_REPO: ghcr.io/${{ github.repository_owner }}
-          KO_DEFAULTBASEIMAGE: debian:stable-slim
+          KO_DEFAULTBASEIMAGE: cgr.dev/chainguard/node:latest
           KO_DEFAULTPLATFORMS: linux/arm64,linux/amd64
       - run: |
           while read ref; do
